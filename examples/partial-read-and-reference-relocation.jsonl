@@ -1,0 +1,15 @@
+{"at":0,"kind":"payload","record":{"payload":"p","body":"ABCD","digest":"d1"}}
+{"at":1,"kind":"copy","record":{"payload":"p","copy":"old","version":1,"length":4,"digest":"d1","until":40}}
+{"at":2,"kind":"publish","record":{"id":"a","payload":"p","groups":["x","y"]}}
+{"at":3,"kind":"take","record":{"id":"a","group":"x","receipt":"rx"}}
+{"at":4,"kind":"progress","record":{"receipt":"rx","group":"x","copy":"old","through":2,"result":"reading"}}
+{"at":5,"kind":"offline","record":{"copy":"old"}}
+{"at":6,"kind":"copy","record":{"payload":"p","copy":"bad","version":2,"length":4,"digest":"different","until":50}}
+{"at":7,"kind":"rebind","record":{"receipt":"rx","copy":"bad"}}
+{"at":8,"kind":"copy","record":{"payload":"p","copy":"new","version":3,"length":4,"digest":"d1","until":50}}
+{"at":9,"kind":"rebind","record":{"receipt":"rx","copy":"new"}}
+{"at":10,"kind":"restart","record":{}}
+{"at":11,"kind":"progress","record":{"receipt":"rx","group":"x","copy":"new","through":4,"result":"complete"}}
+{"at":12,"kind":"release","record":{"id":"a","group":"x"}}
+{"at":13,"kind":"take","record":{"id":"a","group":"y","receipt":"ry"}}
+{"at":14,"kind":"inspect","record":{"id":"a"}}

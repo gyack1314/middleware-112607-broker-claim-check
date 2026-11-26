@@ -1,0 +1,14 @@
+[
+  "copy",
+  "delete",
+  "deleted",
+  "inspect",
+  "offline",
+  "payload",
+  "progress",
+  "publish",
+  "rebind",
+  "release",
+  "restart",
+  "take"
+]

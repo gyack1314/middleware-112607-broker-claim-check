@@ -1,0 +1,16 @@
+{"at":0,"kind":"payload","record":{"payload":"p","body":"ABCD","digest":"d1"}}
+{"at":0,"kind":"copy","record":{"payload":"p","copy":"shared","version":1,"length":4,"digest":"d1","until":30}}
+{"at":1,"kind":"publish","record":{"id":"a","payload":"p","groups":["x"]}}
+{"at":1,"kind":"publish","record":{"id":"b","payload":"p","groups":["y"]}}
+{"at":2,"kind":"take","record":{"id":"a","group":"x","receipt":"rx"}}
+{"at":3,"kind":"progress","record":{"receipt":"rx","group":"x","copy":"shared","through":4,"result":"complete"}}
+{"at":4,"kind":"release","record":{"id":"a","group":"x"}}
+{"at":5,"kind":"delete","record":{"copy":"shared"}}
+{"at":6,"kind":"take","record":{"id":"b","group":"y","receipt":"ry"}}
+{"at":7,"kind":"progress","record":{"receipt":"ry","group":"x","copy":"shared","through":4,"result":"complete"}}
+{"at":8,"kind":"progress","record":{"receipt":"ry","group":"y","copy":"shared","through":4,"result":"complete"}}
+{"at":9,"kind":"release","record":{"id":"b","group":"y"}}
+{"at":10,"kind":"delete","record":{"copy":"shared"}}
+{"at":11,"kind":"publish","record":{"id":"late","payload":"p","groups":["z"]}}
+{"at":12,"kind":"deleted","record":{"copy":"shared"}}
+{"at":13,"kind":"inspect","record":{"id":"late"}}
